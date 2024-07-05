@@ -3,6 +3,7 @@ let
     defaultGroups = [ "wheel" "video" "power" "networkmanager" "docker" ];
     nateKey = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIKllhPAEJdo9+b8mOv6NUcSyVDjVz9yzXXcdKlN98FV1 nathaniel";
     seanKey = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIKNK5Ds6fbRg9E/kJlPgv2CVlW47dbVM9NnOddBjU4oH sean";
+    seanWSL = "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQDMQccxq0NDaceHTtdGQghhPJOXve6Qxe+P6h+bqm4AHL5zx5KTo6IG7l3RHk+Mp31CZnoo2zgcTtq+AltQjR1GnYQ4Gb1TJjqk2BytabqFDL4lMKEhkhz+Xgl2ClzTtIAkyP1QxyP0WaOORWFHQVseP/WFacNslqV6VCQfTFTDAvWZiI0WIYmJHlc2kpjI+zo4sDe79PAoBY4lWabIOtVxlE5EUxgzBgLSTlpb2BFkuzOnc7sTsMAVHawSuwN22CiQGFNn/SNvJIOpNHTf5CtjRzLl22Mg31/4U7dgYxWWBmApUI+5HS7nXyIGZHiHnIia3DZ9t1rboJ/wEde+KmKo/Ope9JOGfZmaf5F3SnKeju0FI77sQkJrsFYSFsV9KU1HW4IIKGTSLzJL5JJKinsJIBqVRULD/WGq1YO8fEcaWD3Wn7rPeK9Odaof4xtI76RMqAg0YmWCJXFM48yxqqSvr56nD5PNPr5xQP7oJzJ1g58TNtqm5vRAUu3vBCmgMCc= sean@Main-PC";
 in
 {
     imports = [
@@ -40,6 +41,7 @@ in
             hashedPassword = "$y$j9T$Pb0.439rXbIO76Pca.1T61$ywxJiFJL56TgsSm9zJ2clx0ENOjjXDAsP.qyTNTINx7";
             openssh.authorizedKeys.keys = [
                 seanKey
+                seanWSL
             ];
         };
         nathaniel = {
@@ -55,6 +57,7 @@ in
         root = {
             openssh.authorizedKeys.keys = [
                 seanKey
+                seanWSL
                 nateKey
             ];
         };
