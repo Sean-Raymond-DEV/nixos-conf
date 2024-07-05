@@ -5,6 +5,9 @@ let
     seanKey = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIKNK5Ds6fbRg9E/kJlPgv2CVlW47dbVM9NnOddBjU4oH sean";
 in
 {
+    imports = [
+        ./bcachefs.nix
+    ];
     time.timeZone = "America/Los_Angeles";
     i18n.defaultLocale = "en_US.UTF-8";
     boot.loader = {
