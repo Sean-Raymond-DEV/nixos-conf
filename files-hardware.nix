@@ -24,6 +24,12 @@
       options = [ "fmask=0022" "dmask=0022" ];
     };
 
+  fileSystems."/files" = {
+    device = "/dev/sdb:/dev/nvme0n1";
+    fsType = "bcachefs";
+    options = [ "compression=zstd" ];
+  };
+
   swapDevices =
     [ { device = "/dev/disk/by-uuid/46254214-53e4-4251-a7f2-80e2c925bea8"; }
     ];
