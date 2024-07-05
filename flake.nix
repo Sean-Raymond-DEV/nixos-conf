@@ -12,6 +12,7 @@
         specialArgs = inputs;
         modules = [
           ./nixos-config.nix
+          ./files-hardware.nix
         ];
       };
     };
