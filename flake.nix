@@ -6,7 +6,7 @@
   };
 
   outputs = { self, nixpkgs, ... }@inputs: {
-    nixosConfigurations = {
+    nixosConfigurations = nixpkgs.lib.nixosSystem {
       files = {
         system = "x86_64-linux";
         specialArgs = inputs;
