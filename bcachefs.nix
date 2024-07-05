@@ -1,6 +1,6 @@
 { pkgs, ... }:
 {
-    environment.systemPackaqges = with pkgs; [
+    environment.systemPackages = with pkgs; [
         bcachefs-tools
     ];
     boot.supportedFilesystems = [ "bcachefs" ];
