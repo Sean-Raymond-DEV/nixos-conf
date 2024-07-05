@@ -25,9 +25,9 @@
     };
 
   fileSystems."/files" = {
-    device = "/dev/sdb:/dev/nvme0n1";
+    device = "/dev/disk/by-uuid/2752e465-ee01-4bf2-b9b7-a25b39d3985c";
     fsType = "bcachefs";
-    options = [ "compression=zstd" ];
+    options = [ "background_compression=zstd" ];
   };
 
   swapDevices =
