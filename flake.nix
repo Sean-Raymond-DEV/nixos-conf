@@ -17,18 +17,18 @@
       };
     };
     packages.x86_64-linux.update =
-    let
-      pkgs = import nixpkgs { system = "x86_64-linux"; };
-    in
-    pkgs.writeShellApplication {
-      name = "update";
-      runtimeInputs = with pkgs; [ nixos-rebuild nix git ];
-      text = ''
-        nix flake update --commit-lock-file
-        nixos-rebuild switch --flake .#files --target-host root@files
-        echo "done"
-      '';
-    };
+      let
+        pkgs = import nixpkgs { system = "x86_64-linux"; };
+      in
+      pkgs.writeShellApplication {
+        name = "update";
+        runtimeInputs = with pkgs; [ nixos-rebuild nix git ];
+        text = ''
+          nix flake update --commit-lock-file
+          nixos-rebuild switch --flake .#files --target-host root@files
+          echo "done"
+        '';
+      };
     apps.x86_64-linux.update = {
       type = "app";
       program = "${self.packages.x86_64-linux.update}/bin/update";
