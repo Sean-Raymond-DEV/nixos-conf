@@ -7,7 +7,7 @@
             workgroup = WORKGROUP
             server string = files
             netbios name = files
-            hosts allow = 100.64.0. 127.0.0.1 192.168.0. localhost
+            hosts allow = 100. 127.0.0.1 192.168.0. localhost
             hosts deny = 0.0.0.0/0
             map to guest = bad user
         '';
